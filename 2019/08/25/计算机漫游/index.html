@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>first | Hexo</title>
+  <title>计算机漫游 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="first">
-<meta property="og:url" content="http://yoursite.com/2019/08/25/first/index.html">
+  <meta name="description" content="深入理解计算机系统读书心得第一章——计算机系统漫游  存储器的结构分布如下：  L0——CPU寄存器 L1——高速缓存（CPU一级缓存）SRAM L2——高速缓存（CPU二级缓存）SRAM L3——高速缓存（CPU三级缓存）SRAM L4——内存 DRAM L5——硬盘 L6——Web服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机漫游">
+<meta property="og:url" content="http://yoursite.com/2019/08/25/计算机漫游/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="深入理解计算机系统读书心得第一章——计算机系统漫游  存储器的结构分布如下：  L0——CPU寄存器 L1——高速缓存（CPU一级缓存）SRAM L2——高速缓存（CPU二级缓存）SRAM L3——高速缓存（CPU三级缓存）SRAM L4——内存 DRAM L5——硬盘 L6——Web服务器">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-25T09:40:35.415Z">
+<meta property="og:updated_time" content="2019-08-25T13:11:51.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="first">
+<meta name="twitter:title" content="计算机漫游">
+<meta name="twitter:description" content="深入理解计算机系统读书心得第一章——计算机系统漫游  存储器的结构分布如下：  L0——CPU寄存器 L1——高速缓存（CPU一级缓存）SRAM L2——高速缓存（CPU二级缓存）SRAM L3——高速缓存（CPU三级缓存）SRAM L4——内存 DRAM L5——硬盘 L6——Web服务器">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -26,7 +29,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(200deg,#19C2B4,#D4114C);
     }
   </style>
   
@@ -40,14 +43,14 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #19C2B4"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/dante.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">DAZHA大渣</a></h1>
 		</hgroup>
 		
 
@@ -56,7 +59,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/tags/">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -80,32 +83,33 @@
 				
 					<a class="github" target="_blank" href="https://github.com/DAZHAdazha" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/feng-yun-jia-49/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="douban" target="_blank" href="https://www.douban.com/people/149866387/" title="douban"><i class="icon-douban"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="bilibili" target="_blank" href="https://space.bilibili.com/4387449" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:758343984@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
 	</header>		
 </div>
-
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #19C2B4"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/dante.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">DAZHA大渣</h1>
 			</hgroup>
 			
 			
@@ -121,11 +125,13 @@
 					
 						<a class="github" target="_blank" href="https://github.com/DAZHAdazha" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/feng-yun-jia-49/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="douban" target="_blank" href="https://www.douban.com/people/149866387/" title="douban"><i class="icon-douban"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="bilibili" target="_blank" href="https://space.bilibili.com/4387449" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:758343984@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -136,7 +142,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/tags/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -151,27 +157,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-first" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-计算机漫游" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      first
+      计算机漫游
     </h1>
   
 
         
-        <a href="/2019/08/25/first/" class="archive-article-date">
-  	<time datetime="2019-08-25T09:40:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
+        <a href="/2019/08/25/计算机漫游/" class="archive-article-date">
+  	<time datetime="2019-08-25T13:11:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
 </a>
         
       </header>
+	  <div align="center" class="post-count">
+    字数：83字 | 预计阅读时长：1分钟
+</div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="深入理解计算机系统读书心得"><a href="#深入理解计算机系统读书心得" class="headerlink" title="深入理解计算机系统读书心得"></a>深入理解计算机系统读书心得</h1><h2 id="第一章——计算机系统漫游"><a href="#第一章——计算机系统漫游" class="headerlink" title="第一章——计算机系统漫游"></a>第一章——计算机系统漫游</h2><blockquote>
+<ul>
+<li>存储器的结构分布如下：</li>
+</ul>
+<p>L0——CPU寄存器</p>
+<p>L1——高速缓存（CPU一级缓存）SRAM</p>
+<p>L2——高速缓存（CPU二级缓存）SRAM</p>
+<p>L3——高速缓存（CPU三级缓存）SRAM</p>
+<p>L4——内存 DRAM</p>
+<p>L5——硬盘</p>
+<p>L6——Web服务器</p>
+</blockquote>
+
       
 
       
@@ -187,6 +208,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢啦~<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -250,7 +281,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/25/first/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/25/计算机漫游/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -309,7 +340,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 John Doe
+    		&copy; 2019 DAZHA大渣
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -440,27 +471,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>啥都没有哦</a>
             </li>
           
         </ul>
@@ -471,7 +482,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">这里是DAZHA大渣的个人博客哦！</div>
   	  	
     	</section>
     
