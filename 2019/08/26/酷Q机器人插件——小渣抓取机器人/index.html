@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>酷Q机器人插件——小渣抓取机器人 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="酷Q机器人插件——小渣抓取机器人 难度：中等   应用技术：基于酷Q机器人Air开发的聊天记录机器人，分别包括Python版本以及C++版本   主要收获：  开发了自己第一款有实际用途的应用插件 尝试阅读官方文档使用了对应API开发应用    不足：  Python版本的官方接口并不完善，无法进行打包应用，所以需要用户自行安装开发环境  C++由于开发难度较大，许多功能由于技术原因无法实现，只好">
+<meta name="keywords" content="项目练手">
+<meta property="og:type" content="article">
+<meta property="og:title" content="酷Q机器人插件——小渣抓取机器人">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/酷Q机器人插件——小渣抓取机器人/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="酷Q机器人插件——小渣抓取机器人 难度：中等   应用技术：基于酷Q机器人Air开发的聊天记录机器人，分别包括Python版本以及C++版本   主要收获：  开发了自己第一款有实际用途的应用插件 尝试阅读官方文档使用了对应API开发应用    不足：  Python版本的官方接口并不完善，无法进行打包应用，所以需要用户自行安装开发环境  C++由于开发难度较大，许多功能由于技术原因无法实现，只好">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-26T02:29:00.737Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="酷Q机器人插件——小渣抓取机器人">
+<meta name="twitter:description" content="酷Q机器人插件——小渣抓取机器人 难度：中等   应用技术：基于酷Q机器人Air开发的聊天记录机器人，分别包括Python版本以及C++版本   主要收获：  开发了自己第一款有实际用途的应用插件 尝试阅读官方文档使用了对应API开发应用    不足：  Python版本的官方接口并不完善，无法进行打包应用，所以需要用户自行安装开发环境  C++由于开发难度较大，许多功能由于技术原因无法实现，只好">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -153,16 +158,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-酷Q机器人插件——小渣抓取机器人" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-酷Q机器人插件——小渣抓取机器人" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/酷Q机器人插件——小渣抓取机器人/">酷Q机器人插件——小渣抓取机器人</a>
+    <h1 class="article-title" itemprop="name">
+      酷Q机器人插件——小渣抓取机器人
     </h1>
   
 
@@ -221,11 +224,47 @@
 <li>通过指令查询，添加，删除关键词</li>
 </ol>
 </blockquote>
-        
-          <a class="article-more-a" href="/2019/08/26/酷Q机器人插件——小渣抓取机器人/#more">more >></a>
-        
+<a id="more"></a>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;<span class="keyword">import</span> cqplus</span><br><span class="line">&gt;<span class="keyword">import</span> datetime</span><br><span class="line">&gt;<span class="keyword">import</span> os</span><br><span class="line">&gt;now_time = datetime.datetime.now()</span><br><span class="line">&gt;today_time = datetime.datetime.strftime(now_time, <span class="string">'%Y-%m-%d'</span>) + <span class="string">".txt"</span></span><br><span class="line">&gt;read_me_1 = <span class="string">"'$check'指令:根据关键词搜索今天相关的内容"</span></span><br><span class="line">&gt;read_me_2 = <span class="string">"'$show'指令：列出现在所有的关键词内容"</span></span><br><span class="line">&gt;read_me_3 = <span class="string">"'$clear'指令：清除目前所有关键词"</span></span><br><span class="line">&gt;read_me_4 = <span class="string">"'$add''keyword'指令：增加关键词 例如$add学习，则学习为新的关键词"</span></span><br><span class="line">&gt;<span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(cqplus.CQPlusHandler)</span>:</span></span><br><span class="line">&gt;    <span class="function"><span class="keyword">def</span> <span class="title">handle_event</span><span class="params">(self, event, params)</span>:</span></span><br><span class="line">&gt;        <span class="comment">#self.logging.debug("hello world")</span></span><br><span class="line">&gt;        <span class="keyword">if</span> event == <span class="string">"on_timer"</span>:</span><br><span class="line">&gt;            <span class="keyword">for</span> key <span class="keyword">in</span> params:</span><br><span class="line">&gt;                self.logging.debug(key + <span class="string">" value : "</span>+ str(type(params[key])))</span><br><span class="line">&gt;<span class="comment">#                if type(params[key]) == dict:</span></span><br><span class="line">&gt;<span class="comment">#                    for key2 in params[key]:</span></span><br><span class="line">&gt;<span class="comment">#                        if key2 == "TIMER":</span></span><br><span class="line">&gt;<span class="comment">#                            continue</span></span><br><span class="line">&gt;<span class="comment">#                        self.logging.debug(key2 + " value2 : "+ str(params[key][key2]))</span></span><br><span class="line">&gt;                <span class="keyword">pass</span></span><br><span class="line">&gt;        <span class="keyword">elif</span> event == <span class="string">"on_private_msg"</span>:</span><br><span class="line">&gt;            self.logging.debug(event)</span><br><span class="line">&gt;            self.logging.debug(str(params[<span class="string">"from_qq"</span>]))</span><br><span class="line">&gt;            self.logging.debug(params[<span class="string">"msg"</span>])</span><br><span class="line">&gt;            self.logging.debug(str(params[<span class="string">"msg_id"</span>]))</span><br><span class="line">&gt;            <span class="keyword">if</span> params[<span class="string">"msg"</span>] == <span class="string">"$readme"</span>:</span><br><span class="line">&gt;                cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], read_me_1)</span><br><span class="line">&gt;                cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], read_me_2)</span><br><span class="line">&gt;                cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], read_me_3)</span><br><span class="line">&gt;                cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], read_me_4)</span><br><span class="line">&gt;            <span class="keyword">if</span> params[<span class="string">"msg"</span>] == <span class="string">"$show"</span>:</span><br><span class="line">&gt;                keyword_str = open(<span class="string">"keyword_list.txt"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">&gt;                keyword_str_line = keyword_str.read()</span><br><span class="line">&gt;                <span class="keyword">if</span> os.path.getsize(<span class="string">"keyword_list.txt"</span>) == <span class="number">0</span>:</span><br><span class="line">&gt;                    cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], <span class="string">"内容是空的哦！(￣▽￣)"</span>)</span><br><span class="line">&gt;                <span class="keyword">else</span>:</span><br><span class="line">&gt;                    cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], keyword_str_line)</span><br><span class="line">&gt;            <span class="keyword">if</span> params[<span class="string">"msg"</span>] == <span class="string">"$clear"</span>:</span><br><span class="line">&gt;               keyword_clear = open(<span class="string">"keyword_list.txt"</span>, <span class="string">"w+"</span>)</span><br><span class="line">&gt;               cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], <span class="string">"清空了哦！(●ˇ∀ˇ●)"</span>)</span><br><span class="line">&gt;            <span class="keyword">if</span> params[<span class="string">"msg"</span>].startswith(<span class="string">"$add"</span>):</span><br><span class="line">&gt;                keyword_add_read = open(<span class="string">"keyword_list.txt"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">&gt;                keyword_add_write =open(<span class="string">"keyword_list.txt"</span>, <span class="string">"a+"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">&gt;                keyword_add_str = keyword_add_read.read()</span><br><span class="line">&gt;                <span class="keyword">if</span> len(keyword_add_str) &gt; <span class="number">1</span>:</span><br><span class="line">&gt;                    keyword_add_write.write(<span class="string">'\n'</span>)</span><br><span class="line">&gt;                keyword_add_write.write(params[<span class="string">"msg"</span>].strip(<span class="string">"$add+"</span>))</span><br><span class="line">&gt;                cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], <span class="string">"添加成功了哦！(●'◡'●)"</span>)</span><br><span class="line">&gt;            <span class="keyword">if</span> params[<span class="string">"msg"</span>] == <span class="string">"jonsnow19"</span>:</span><br><span class="line">&gt;                cqplus._api.send_private_msg(params[<span class="string">"env"</span>],params[<span class="string">"from_qq"</span>],<span class="string">"Happy Birthday!(oﾟvﾟ)ノ"</span>)</span><br><span class="line">&gt;</span><br><span class="line">&gt;            <span class="keyword">if</span> str(params[<span class="string">"msg"</span>]) == <span class="string">"$check"</span>:</span><br><span class="line">&gt;                cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], <span class="string">"稍等"</span>)</span><br><span class="line">&gt;                num = <span class="number">0</span></span><br><span class="line">&gt;                <span class="keyword">for</span> line <span class="keyword">in</span> open(today_time):</span><br><span class="line">&gt;                    <span class="keyword">for</span> lines <span class="keyword">in</span> open(<span class="string">"keyword_list.txt"</span>, encoding=<span class="string">'utf-8'</span>):</span><br><span class="line">&gt;                        <span class="keyword">if</span> line.find(lines.encode(<span class="string">'utf-8'</span>).decode(<span class="string">'utf-8-sig'</span>).strip()) &gt;= <span class="number">0</span>:</span><br><span class="line">&gt;                            cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], line)</span><br><span class="line">&gt;                            num += <span class="number">1</span></span><br><span class="line">&gt;                <span class="keyword">if</span> num == <span class="number">0</span>:</span><br><span class="line">&gt;                    cqplus._api.send_private_msg(params[<span class="string">"env"</span>], params[<span class="string">"from_qq"</span>], <span class="string">"抱歉，没有找到哦(っ °Д °;)っ"</span>)</span><br><span class="line">&gt;            file_log = open(today_time, <span class="string">"a+"</span>)</span><br><span class="line">&gt;            file_log.write(<span class="string">"类型：private "</span>)</span><br><span class="line">&gt;            file_log.write(<span class="string">"消息ID："</span> + str(params[<span class="string">"msg_id"</span>]) + <span class="string">' '</span>)</span><br><span class="line">&gt;            file_log.write(<span class="string">"来自："</span> + str(params[<span class="string">"from_qq"</span>]) + <span class="string">" "</span>)  <span class="comment"># params["msg"] 为消息</span></span><br><span class="line">&gt;            file_log.write(<span class="string">"内容："</span> + str(params[<span class="string">"msg"</span>]) + <span class="string">" "</span>)</span><br><span class="line">&gt;            <span class="comment"># file_log.write('\r\t')</span></span><br><span class="line">&gt;            time1 = datetime.datetime.now()</span><br><span class="line">&gt;            time1_string = datetime.datetime.strftime(time1, <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</span><br><span class="line">&gt;            file_log.write(<span class="string">"时间："</span> + time1_string + <span class="string">"\n"</span>)</span><br><span class="line">&gt;            <span class="comment">#            for key in params:</span></span><br><span class="line">&gt;            <span class="comment">#                self.logging.debug(key + " value : "+ str(type(params[key])))</span></span><br><span class="line">&gt;            <span class="comment">#                pass</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;        <span class="keyword">elif</span> event == <span class="string">"on_group_msg"</span>:</span><br><span class="line">&gt;            self.logging.debug(event)</span><br><span class="line">&gt;            <span class="keyword">for</span> key <span class="keyword">in</span> params:</span><br><span class="line">&gt;                self.logging.debug(key + <span class="string">" value : "</span> + str(params[key]))</span><br><span class="line">&gt;                <span class="keyword">pass</span></span><br><span class="line">&gt;            <span class="comment">#cqplus._api.send_group_msg(params["env"], params["from_group"], params["msg"])</span></span><br><span class="line">&gt;            file_log.write(<span class="string">"类型：group "</span>)</span><br><span class="line">&gt;            file_log.write(<span class="string">"消息ID："</span> + str(params[<span class="string">"msg_id"</span>]) + <span class="string">' '</span>)</span><br><span class="line">&gt;            file_log.write(<span class="string">"来自群："</span> + str(params[<span class="string">"from_group"</span>]) + <span class="string">" "</span>)  <span class="comment"># params["msg"] 为消息</span></span><br><span class="line">&gt;            file_log.write(<span class="string">"来自人："</span> + str(params[<span class="string">"from_qq"</span>]) + <span class="string">" "</span>)</span><br><span class="line">&gt;            file_log.write(<span class="string">"内容："</span> + str(params[<span class="string">"msg"</span>]) + <span class="string">" "</span>)</span><br><span class="line">&gt;            time1 = datetime.datetime.now()</span><br><span class="line">&gt;            time1_string = datetime.datetime.strftime(time1, <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</span><br><span class="line">&gt;            file_log.write(<span class="string">"时间："</span> + time1_string + <span class="string">'\n'</span>)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+</blockquote>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢啦~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -245,209 +284,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/26/酷Q机器人插件——小渣抓取机器人/">展开全文 >></a>
-        </p>
-      
 
       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-飞碟大战坦克小游戏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/飞碟大战坦克小游戏/">飞碟大战坦克小游戏</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/26/飞碟大战坦克小游戏/" class="archive-article-date">
-  	<time datetime="2019-08-26T02:14:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
-</a>
-        
-      </header>
-	  <div align="center" class="post-count">
-    字数：3.8k字 | 预计阅读时长：22分钟
+      </div>
+    </span>
+  </div>
 </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="飞碟大战坦克小游戏"><a href="#飞碟大战坦克小游戏" class="headerlink" title="飞碟大战坦克小游戏"></a>飞碟大战坦克小游戏</h1><h2 id="我做的第一个基于C语言完成的小游戏"><a href="#我做的第一个基于C语言完成的小游戏" class="headerlink" title="我做的第一个基于C语言完成的小游戏"></a>我做的第一个基于C语言完成的小游戏</h2><blockquote>
-<p>应用技术：C语言Acillib图形库</p>
-<p>收获：C语言做的第一个小项目，几乎将所有C语言的基础内容都使用了一遍，包括结构，链表的数据结构，文件的使用，以及基础的图形库运用，了解了回调函数触发事件的简单游戏机制，算得上是自己第一个处女作了吧</p>
-</blockquote>
-<h2 id="具体使用方法"><a href="#具体使用方法" class="headerlink" title="具体使用方法"></a>具体使用方法</h2><blockquote>
-<p>点击<strong>acllibl.exe</strong>文件运行即可</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/08/26/飞碟大战坦克小游戏/#more">more >></a>
-        
-      
 
-      
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/26/酷Q机器人插件——小渣抓取机器人/" alt="微信分享二维码">
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目练手</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/26/飞碟大战坦克小游戏/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-igxe磨损比价爬虫" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/igxe磨损比价爬虫/">igxe磨损比价爬虫</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/26/igxe磨损比价爬虫/" class="archive-article-date">
-  	<time datetime="2019-08-26T01:54:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
-</a>
-        
-      </header>
-	  <div align="center" class="post-count">
-    字数：978字 | 预计阅读时长：4分钟
 </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="igxe-csgo饰品磨损比价爬虫"><a href="#igxe-csgo饰品磨损比价爬虫" class="headerlink" title="igxe-csgo饰品磨损比价爬虫"></a>igxe-csgo饰品磨损比价爬虫</h1><h2 id="自学web以及python爬虫的第一个练手项目"><a href="#自学web以及python爬虫的第一个练手项目" class="headerlink" title="自学web以及python爬虫的第一个练手项目"></a>自学web以及python爬虫的第一个练手项目</h2><blockquote>
-<p>难度：简单</p>
-</blockquote>
-<blockquote>
-<p>应用技术：request库 re库 jsonpath库 BeautifulSoup库</p>
-</blockquote>
-<blockquote>
-<p>主要收获：</p>
-<ul>
-<li>利用浏览器开发者工具中的Network 的XHR来或许网页异步发送的请求（比如翻页之后的信息）</li>
-<li>通过jsonpath库 来抓取json格式的数据文件</li>
-<li>简单的使用re库获取信息</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>不足：igxe网站反爬虫难度不大，未设有登录验证以及滑块验证码等复杂操作，因此难度过于简单</p>
-</blockquote>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><blockquote>
-<p>环境要求：request库 BeautifulSoup库 jsonpath库（使用pip install 指令安装）</p>
-<p>具体用法：</p>
-<ul>
-<li>输入关键字（建议输入完整的商品名称 e.g. <strong>AWP | 二西莫夫 (久经沙场)</strong> )</li>
-<li>输入期待的最高价格，程序会给出改价格内能买到的最低的磨损</li>
-<li>程序会在根目录生成 <strong>data.text</strong> 文件，里面包含了该商品的所有磨损及对应价格</li>
-<li>源码中的 <strong>choice</strong> 变量默认为0，但若搜索的饰品包含了StatTrack则将 <strong>choice</strong> 改成1可显示带计数器的皮肤</li>
-</ul>
-</blockquote>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
-<p>该项目只是第一个练手，我根据情况说不定会更新其他饰品网站的比价程序（呼声较高的是网易BUFF），但是其他网站说不定会更难爬取一些，一切看我情况再说啦(。・∀・)ノ</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/08/26/igxe磨损比价爬虫/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目练手</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/26/igxe磨损比价爬虫/">展开全文 >></a>
-        </p>
-      
-
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/26/飞碟大战坦克小游戏/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">飞碟大战坦克小游戏</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -467,96 +372,14 @@
 
 
 
-
   
-    <article id="post-深入理解计算机系统读书心得第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/25/深入理解计算机系统读书心得第一章/">深入理解计算机系统读书心得</a>
-    </h1>
   
 
-        
-        <a href="/2019/08/25/深入理解计算机系统读书心得第一章/" class="archive-article-date">
-  	<time datetime="2019-08-25T13:11:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
-</a>
-        
-      </header>
-	  <div align="center" class="post-count">
-    字数：70字 | 预计阅读时长：1分钟
-</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章——计算机系统漫游"><a href="#第一章——计算机系统漫游" class="headerlink" title="第一章——计算机系统漫游"></a>第一章——计算机系统漫游</h2><blockquote>
-<ul>
-<li>存储器的结构分布如下：</li>
-</ul>
-<p>L0——CPU寄存器</p>
-<p>L1——高速缓存（CPU一级缓存）SRAM</p>
-<p>L2——高速缓存（CPU二级缓存）SRAM</p>
-<p>L3——高速缓存（CPU三级缓存）SRAM</p>
-<p>L4——内存 DRAM</p>
-<p>L5——硬盘</p>
-<p>L6——Web服务器</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书心得</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/25/深入理解计算机系统读书心得第一章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -579,8 +402,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
