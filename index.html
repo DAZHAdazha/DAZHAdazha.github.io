@@ -60,7 +60,7 @@
 			</ul>
 		</nav>
 		<nav>
-				总文章数： 6
+				总文章数： 7
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -157,6 +157,135 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-第二章——信息的表示和处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/第二章——信息的表示和处理/">第二章——信息的表示和处理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/28/第二章——信息的表示和处理/" class="archive-article-date">
+  	<time datetime="2019-08-28T14:38:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+</a>
+        
+      </header>
+	  <div align="center" class="post-count">
+    字数：552字 | 预计阅读时长：2分钟
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第二章——信息的表示和处理"><a href="#第二章——信息的表示和处理" class="headerlink" title="第二章——信息的表示和处理"></a>第二章——信息的表示和处理</h2><blockquote>
+<ul>
+<li>将十进制数n转换为十六进制数：<br>当x为2的非负整数n次幂时，即</li>
+</ul>
+<p>$$<br>x = 2^n<br>$$</p>
+<p>此时，将n表示为<br>$$<br>i+4j<br>$$<br>的形式，我们便可以把x写成开头的十六进制数字为1（ i = 0）2（ i = 1）4（ i = 2）</p>
+<p>8（ i = 3），后面跟随 j 个十六进制的0。</p>
+<p>i.e.<br>$$<br>2048 = 2^{11}, n = 11 = 3 + 4 \times 2<br>$$<br>则十进制的2048用十六进制表示为0X800。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>字长决定的最重要的系统参数就是虚拟地址空间的最大大小。（字长比如32位以及64位）</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>32位单精度浮点bias(偏置)位127的原因：<br>由于单精度浮点用8位表示指数，即范围</li>
+</ul>
+<p>​                                                0000 0000 ~ 1111 1111 (0~255)</p>
+<p>但 0 归类于非规格数， 255 归类于无穷大，所以仅剩下 1~254<br>$$<br>254\div2=127 =&gt; bias = 127<br>$$<br>于是便可以表示[1-127 , 254-127] =&gt; [-126, 127]</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>浮点数的表示：</p>
+<ul>
+<li>将数分为非规格化数、无穷大以及NaN</li>
+</ul>
+<p>非规格化数：阶码为0000 0000的数</p>
+<p>无穷大：阶码为1111 1111，尾数为000 0000 0000 0000 0000 0000的数</p>
+<p>NaN(Not a number)：阶码为1111 1111 尾数不为0的数</p>
+<p>规格化数：阶码不为0 或255的数</p>
+</li>
+<li><p>implied leading 1(尾数前隐含的个位1)：</p>
+<p>由于所有规格化的数都可以转化为个位为1的二进制小数乘以2的n次方:<br>$$<br>\forall N=1.xxx(x=0   or1) \times2^n<br>$$<br>于是便不再记录个位的“1”，因此可以换来<strong>多一位的尾数精度</strong>，但要记住逆向转换的话要加上首位的1，同理阶码转换时也需要减去bias127</p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>大端法与小端法(big endian &amp; little endian)</li>
+</ul>
+<p>e.g. 字0x01234567 在大端法的机器中存储顺序为 01 23 45 67</p>
+<p>而在小端法的存储顺序为67 45 23 01</p>
+<p><strong>小端法</strong>在当今机器中更加常见。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>补码中正负数的转换：</li>
+</ul>
+<p>5的补码表示为0101 然而-5表示为1011</p>
+<p>转换方式为将所有位数字取反，再加上LSB（least significant bit 最低有效位)即末位加上1</p>
+<p>-3的补码表示为1101 则3为0011 与上面方法类似</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书心得</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/第二章——信息的表示和处理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Pygame小游戏——自制版混乱大枪战" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -942,11 +1071,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境搭建</a>
+                <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
+                <a href="javascript:void(0)" class="js-tag color5">环境搭建</a>
               </li>
              
               <li class="article-tag-list-item">
