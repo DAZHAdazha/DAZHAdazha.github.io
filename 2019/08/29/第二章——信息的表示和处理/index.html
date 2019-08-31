@@ -41,12 +41,19 @@
 </html>
 <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="快点击一下我吧~( •̀ ω •́ )✧",clearTimeout(st)):(document.title="请多多关注我哦！(●'◡'●)",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
 <body>
+
+	<script src="//code.tidio.co/ymtxpcnt28b6trrvijaie52c6rvayabi.js"></script>
+	
+	
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
 <div class="overlay" style="background: #19C2B4"></div>
 <div class="intrude-less">
+
+
+
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			<img src="/img/dante.jpg" class="js-avatar">
@@ -98,7 +105,32 @@
 		        
 			</div>
 		</nav>
-	</header>		
+		
+		<nav class="header-nav">
+    <div class="social">
+        
+            <a class="github" target="_blank" href="https://github.com/DAZHAdazha" title="github"><i class="icon-github"></i></a>
+        
+            <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/feng-yun-jia-49/activities" title="zhihu"><i class="icon-zhihu"></i></a>
+        
+            <a class="douban" target="_blank" href="https://www.douban.com/people/149866387/" title="douban"><i class="icon-douban"></i></a>
+        
+            <a class="bilibili" target="_blank" href="https://space.bilibili.com/4387449" title="bilibili"><i class="icon-bilibili"></i></a>
+        
+            <a class="mail" target="_blank" href="mailto:758343984@qq.com" title="mail"><i class="icon-mail"></i></a>
+        
+    </div>
+
+    <!--音乐播放插件-->
+    <div style="positon:absolute; bottom:110px; left:0px; width:50%">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=270 height=86 src="//music.163.com/outchain/player?type=2&id=1353212443&auto=1&height=66"></iframe>
+    </div>
+</nav>
+		
+	</header>
+
+
+	
 </div>
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
@@ -424,13 +456,33 @@ gitalk.render('gitalk-container')
     <div id="footer-info">
     	<div class="footer-left">
     		&copy; 2019 DAZHA大渣
-    	</div>
+			<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+	var now = new Date(); 
+	function createtime() { 
+		var grt= new Date("8/25/2019 20:00:00");//此处修改你的建站时间或者网站上线时间 
+		now.setTime(now.getTime()+250); 
+		days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+		hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+		if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+		mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+		seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+		snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+		document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+		document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+	} 
+	setInterval("createtime()",250);
+</script>
+		</div>
       	<!-- <div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div> -->
     </div>
   </div>
   
+  <!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
+
             <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 <span id="busuanzi_container_site_pv">
@@ -443,11 +495,11 @@ gitalk.render('gitalk-container')
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script type="text/javascript">
 
-
 </footer>
 
-<!--页面点击小红心-->
-<script type="text/javascript" src="/love.js"></script>
+
+
+
 
 
     </div>
@@ -672,3 +724,4 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
 </body>
 </html>
+
