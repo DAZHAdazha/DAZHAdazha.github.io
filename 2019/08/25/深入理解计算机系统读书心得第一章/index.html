@@ -350,24 +350,30 @@
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2019/08/25/深入理解计算机系统读书心得第一章/",
-  owner: 'DAZHAdazha',
-  repo: 'blog-gitment',
-  oauth: {
-    client_id: 'e76576a3338c9cee6b71',
-    client_secret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
-  },
+
+
+
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'e76576a3338c9cee6b71',
+  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
+  	repo: 'blog-gitment',
+  	owner: 'DAZHAdazha',
+  	admin: ['DAZHAdazha'],
+  	id: 'Sun Aug 25 2019 21:11:10 GMT+0800',
+  	distractionFreeMode: 'true'
 })
-gitment.render('gitment-ctn')
+gitalk.render('gitalk-container') 
+}
+</script>
 </script>
   
-
-
           </div>
         </div>
       </div>
