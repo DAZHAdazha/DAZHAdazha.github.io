@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://dazhadazha.github.io">
-  <title>DAZHA大渣的博客</title>
+  <title>深入理解计算机系统读书心得 | DAZHA大渣的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DAZHA大渣的博客">
-<meta property="og:url" content="http://dazhadazha.github.io/index.html">
+  <meta name="description" content="第六章——存储器层次结构  磁盘容量 = 字节数（扇区）* 平均扇区数（磁道）* 磁道数 （表面）* 表面数 （盘片）* 盘片数（磁盘） 磁盘结构    内存和磁盘技术的一个基本事实：增加密度（从而降低成本）比降低访问时间容易得多    局部性（locality) 一个有良好局部性的计算机程序倾向于引用邻于其他最近引用过的数据项的数据项，或者最近引用过的数据本身。 时间局限性：被引用过一次的内存位">
+<meta name="keywords" content="读书心得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解计算机系统读书心得">
+<meta property="og:url" content="http://dazhadazha.github.io/2019/09/14/第六章——存储器层次结构/index.html">
 <meta property="og:site_name" content="DAZHA大渣的博客">
+<meta property="og:description" content="第六章——存储器层次结构  磁盘容量 = 字节数（扇区）* 平均扇区数（磁道）* 磁道数 （表面）* 表面数 （盘片）* 盘片数（磁盘） 磁盘结构    内存和磁盘技术的一个基本事实：增加密度（从而降低成本）比降低访问时间容易得多    局部性（locality) 一个有良好局部性的计算机程序倾向于引用邻于其他最近引用过的数据项的数据项，或者最近引用过的数据本身。 时间局限性：被引用过一次的内存位">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://dazhadazha.github.io/img/structure.jpg">
+<meta property="og:image" content="http://dazhadazha.github.io/img/middle.jpg">
+<meta property="og:image" content="http://dazhadazha.github.io/img/cache.jpg">
+<meta property="og:image" content="http://dazhadazha.github.io/img/anwser.jpg">
+<meta property="og:updated_time" content="2019-09-14T09:45:22.791Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DAZHA大渣的博客">
+<meta name="twitter:title" content="深入理解计算机系统读书心得">
+<meta name="twitter:description" content="第六章——存储器层次结构  磁盘容量 = 字节数（扇区）* 平均扇区数（磁道）* 磁道数 （表面）* 表面数 （盘片）* 盘片数（磁盘） 磁盘结构    内存和磁盘技术的一个基本事实：增加密度（从而降低成本）比降低访问时间容易得多    局部性（locality) 一个有良好局部性的计算机程序倾向于引用邻于其他最近引用过的数据项的数据项，或者最近引用过的数据本身。 时间局限性：被引用过一次的内存位">
+<meta name="twitter:image" content="http://dazhadazha.github.io/img/structure.jpg">
   
     <link rel="alternative" href="/atom.xml" title="DAZHA大渣的博客" type="application/atom+xml">
   
@@ -248,16 +258,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-第六章——存储器层次结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-第六章——存储器层次结构" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/14/第六章——存储器层次结构/">深入理解计算机系统读书心得</a>
+    <h1 class="article-title" itemprop="name">
+      深入理解计算机系统读书心得
     </h1>
   
 
@@ -269,6 +277,10 @@ var _hmt = _hmt || [];
 		
 		
 		 
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
 		
 		
       </header>
@@ -299,11 +311,113 @@ var _hmt = _hmt || [];
 <li>对于取指令来说，循环有好的时间和空间局部性。循环体越小，循环迭代次数越多，局部性越好。</li>
 </ul>
 </blockquote>
-        
-          <a class="article-more-a" href="/2019/09/14/第六章——存储器层次结构/#more">more >></a>
-        
+<a id="more"></a>
+
+<blockquote>
+<h2 id="空间局部性举例"><a href="#空间局部性举例" class="headerlink" title="空间局部性举例"></a>空间局部性举例</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="meta">#<span class="meta-keyword">define</span> N 1000</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">&gt; 	<span class="keyword">int</span> vel[<span class="number">3</span>];</span><br><span class="line">&gt; <span class="keyword">int</span> acc[<span class="number">3</span>];</span><br><span class="line">&gt; &#125; point;</span><br><span class="line">&gt; </span><br><span class="line">&gt; point p[N];</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>​                                                                    structs数组</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">void</span> <span class="title">clear1</span><span class="params">(point *p, <span class="keyword">int</span> n)</span></span></span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt; 	<span class="keyword">int</span> i,j;</span><br><span class="line">&gt; <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt; 		<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">3</span>; j++)</span><br><span class="line">&gt; 		p[i].vel[j]=<span class="number">0</span>;</span><br><span class="line">&gt; <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">3</span>; j++)</span><br><span class="line">&gt;     p[i].acc[j]=<span class="number">0</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">void</span> <span class="title">clear2</span><span class="params">(point *p, <span class="keyword">int</span> n)</span></span></span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt; 	<span class="keyword">int</span> i,j;</span><br><span class="line">&gt; <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt; 		<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">3</span>; j++)</span><br><span class="line">&gt; 		p[i].vel[j]=<span class="number">0</span>;</span><br><span class="line">&gt;     p[i].acc[j]=<span class="number">0</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">void</span> <span class="title">clear3</span><span class="params">(point *p, <span class="keyword">int</span> n)</span></span></span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt; 	<span class="keyword">int</span> i,j;</span><br><span class="line">&gt; <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">3</span>; j++)</span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt; 		<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">&gt; 		p[i].vel[j]=<span class="number">0</span>;</span><br><span class="line">&gt; <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">&gt;     p[i].acc[j]=<span class="number">0</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>以上三段代码中， clear1 优于clear2 优于clear3</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>抖动</strong>(thrash) 是指高速缓存反复地加载和驱逐相同的高速缓存块的组。</li>
+</ul>
+<p>想象一个函数求出两个各有10个元素的数组每组元素的乘积，但是高速缓存一次只能保存一个数组的大小（即十个元素）由于第一次读缓存是冷不命中（cold miss)于是从下一级缓存中获取数组1，但读取数组二时同样未命中（miss），于是从下一级中读取数组2，并替换掉数组1，当再次需要数组1时仍旧为miss….重复以上过程即时抖动。</p>
+<ul>
+<li>对于抖动的优化很简单，仍旧使用上面10个元素数组的例子，这次我们将数组设置成15个元素（后两个为空）这次高速缓存因为小于数组大小于是便不会出现抖动</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>为何高速缓存要用中间位来做组索引？</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>组索引</th>
+<th>位偏移</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>t 位</td>
+<td>s位</td>
+<td>b位</td>
+</tr>
+</tbody></table>
+<p><img src="/img/middle.jpg" alt></p>
+</blockquote>
+<blockquote>
+<h2 id="缓存工作原理"><a href="#缓存工作原理" class="headerlink" title="缓存工作原理"></a>缓存工作原理</h2><p><img src="/img/cache.jpg" alt="缓存工作原理"></p>
+<p>若地址为0x0E34</p>
+<p>则<img src="/img/anwser.jpg" alt="答案"></p>
+</blockquote>
+<blockquote>
+<h2 id="对高速缓存友好的代码"><a href="#对高速缓存友好的代码" class="headerlink" title="对高速缓存友好的代码"></a>对高速缓存友好的代码</h2><ul>
+<li>让最常见的情况运行得快，即循环部分</li>
+<li>尽量减小每个循环内部的缓存不命中数量</li>
+<li>对局部变量的反复引用时好的</li>
+<li>步长为1 的引用模式是好的</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>一个读带宽的时间和空间局部性的二维函数称为存储器山（memory mountain)</li>
+<li>每个计算机都有表明它存储器系统的能力特色的唯一的存储器山</li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="推荐的技术"><a href="#推荐的技术" class="headerlink" title="推荐的技术"></a>推荐的技术</h2><ul>
+<li>将注意力集中在内循环上，大部分计算和内存访问都发生在这里</li>
+<li>通过按照数据对象存储在内存中的顺序、以步长为1的来读数据，从而使得你程序中的空间局部性最大</li>
+<li>一旦从存储器中读入了一个数据对象，就尽可能多地使用它，从而使得程序中的时间局部性最大</li>
+</ul>
+</blockquote>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢啦~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -323,325 +437,75 @@ var _hmt = _hmt || [];
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/14/第六章——存储器层次结构/">展开全文 >></a>
-        </p>
-      
 
       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'e76576a3338c9cee6b71',
-  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
-  	repo: 'blog-gitment',
-  	owner: 'DAZHAdazha',
-  	admin: ['DAZHAdazha'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-</script>
-  
-  
-    <article id="post-第二章——信息的表示和处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/29/第二章——信息的表示和处理/">深入理解计算机系统读书心得</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/29/第二章——信息的表示和处理/" class="archive-article-date">
-  	<time datetime="2019-08-29T14:38:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        
-		
-		
-		 
-		
-		
-      </header>
-	  <div align="center" class="post-count">
-    字数：547字 | 预计阅读时长：2分钟
+      </div>
+    </span>
+  </div>
 </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第二章——信息的表示和处理"><a href="#第二章——信息的表示和处理" class="headerlink" title="第二章——信息的表示和处理"></a>第二章——信息的表示和处理</h2><blockquote>
-<ul>
-<li><p>将十进制数n转换为十六进制数：<br>  当x为2的非负整数n次幂时</p>
-<p>此时，将n表示为  <strong>i+4j</strong> 的形式，我们便可以把x写成开头的十六进制数字为1（i = 0）2( i = 1）4( i = 2）8( i = 3），后面跟随 j 个十六进制的0。</p>
-<p>i.e. 2048 = 2^11, n = 11 = 3+ 4*2</p>
-<p>则十进制的2048用十六进制表示为0X800。</p>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>字长决定的最重要的系统参数就是虚拟地址空间的最大大小。（字长比如32位以及64位）</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>32位单精度浮点bias(偏置)位127的原因：<br>由于单精度浮点用8位表示指数，即范围</li>
-</ul>
-<p>​                                                0000 0000 ~ 1111 1111 (0~255)</p>
-<p>但 0 归类于非规格数， 255 归类于无穷大，所以仅剩下 1~254</p>
-<p>​                                                        254 /2 =127 =&gt; bias = 127</p>
-<p>于是便可以表示[1-127 , 254-127] =&gt; [-126, 127]</p>
-</blockquote>
-<blockquote>
-<ul>
-<li><p>浮点数的表示：</p>
-<ul>
-<li>将数分为非规格化数、无穷大以及NaN</li>
-</ul>
-<p>非规格化数：阶码为0000 0000的数</p>
-<p>无穷大：阶码为1111 1111，尾数为000 0000 0000 0000 0000 0000的数</p>
-<p>NaN(Not a number)：阶码为1111 1111 尾数不为0的数</p>
-<p>规格化数：阶码不为0 或255的数</p>
-</li>
-<li><p>implied leading 1(尾数前隐含的个位1)：</p>
-<p>由于所有规格化的数都可以转化为个位为1的二进制小数乘以2的n次方:</p>
-<p>​                                                            N = 1.xxx( x = 0 or 1) * 2^n</p>
-<p>于是便不再记录个位的“1”，因此可以换来<strong>多一位的尾数精度</strong>，但要记住逆向转换的话要加上首位的1，同理阶码转换时也需要减去bias127</p>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>大端法与小端法(big endian &amp; little endian)</li>
-</ul>
-<p>e.g. 字0x01234567 在大端法的机器中存储顺序为 01 23 45 67</p>
-<p>而在小端法的存储顺序为67 45 23 01</p>
-<p><strong>小端法</strong>在当今机器中更加常见。</p>
-</blockquote>
-<blockquote>
-<ul>
-<li>补码中正负数的转换：</li>
-</ul>
-<p>5的补码表示为0101 然而-5表示为1011</p>
-<p>转换方式为将所有位数字取反，再加上LSB（least significant bit 最低有效位)即末位加上1</p>
-<p>-3的补码表示为1101 则3为0011 与上面方法类似</p>
-</blockquote>
 
-      
-
-      
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://dazhadazha.github.io/2019/09/14/第六章——存储器层次结构/" alt="微信分享二维码">
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书心得</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/29/第二章——信息的表示和处理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'e76576a3338c9cee6b71',
-  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
-  	repo: 'blog-gitment',
-  	owner: 'DAZHAdazha',
-  	admin: ['DAZHAdazha'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-</script>
-  
-  
-    <article id="post-Pygame小游戏——自制版混乱大枪战" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/Pygame小游戏——自制版混乱大枪战/">Pygame小游戏——自制版混乱大枪战.</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/28/Pygame小游戏——自制版混乱大枪战/" class="archive-article-date">
-  	<time datetime="2019-08-28T05:37:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        
-		
-		
-		 
-		
-		
-      </header>
-	  <div align="center" class="post-count">
-    字数：3.2k字 | 预计阅读时长：17分钟
 </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Pygame小游戏——自制版混乱大枪战"><a href="#Pygame小游戏——自制版混乱大枪战" class="headerlink" title="Pygame小游戏——自制版混乱大枪战"></a>Pygame小游戏——自制版混乱大枪战</h1><blockquote>
-<ul>
-<li>难度：中等-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>应用技术：利用python 基于pygame第三方库制作的小游戏</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>开发原因：有天心血来潮想玩玩小时候玩的一款4399小游戏，但是又暂时想不起名字，于是便决定自己做一个自（<del>山</del>)制(<del>寨</del>)版</li>
-<li>（虽然做好后又想起了这款游戏叫做《混乱大枪战》…( ＿ ＿)ノ｜ 而且人物样子还是用的百战天虫的???(っ °Д °;)っ</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>主要收获：早期学习python过程中的一个练手项目，第一次尝试大量运用类，继承等OOP特性进行开发，并且逐渐熟悉了pygame库的使用，在游戏中加入了图片，音乐，以及最基础的物理系统（速度，加速度，碰撞，后坐力等）</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>不足：<ul>
-<li>由于pygame第三方库的限制，许多想加入的功能只好放弃，比如原本考虑增加的射击、击中音效由于pygame只有应用于BGM的单音轨，只好放弃。</li>
-<li>由于pygame性能限制，导致插入背景图片会非常卡顿，所以只好再次沿用简陋的“纯黑”背景（当然也可能是我自己太弱不知道如何优化(；′⌒`)</li>
-<li>鉴于第一次大量使用类，导致写的非常混乱，各种继承乱七八糟，而且也没有很好的体现出类的可复用性，反而使代码异常繁杂，原本打算加入的多武器、技能等系统的加入或许会让类显得更加高效，但是由于种种原因（<del>懒</del>）而一直搁置，不知道以后会不会想起来慢慢更新吧，以后也应该好好多加强类的使用呜呜呜</li>
-<li>原本写的移动、碰撞系统简直糟糕的一塌糊涂，但是由于别人的提醒想到使用现实物理中的速度、加速度等概念一下子变得流畅、明朗了好多，看来自己以后也应当思维更加开阔才行欸</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id="关于游戏"><a href="#关于游戏" class="headerlink" title="关于游戏"></a>关于游戏</h2><blockquote>
-<ul>
-<li>原本打算开发双人对战模式以及单人闯关模式，但是由于时间因素，以及对如何写AI的不熟练（<del>其实还是懒</del>）于是只写出来简陋的双人模式…</li>
-<li>游戏操作：<ul>
-<li>player1: wasd控制方向，g为攻击键，提起大剑发起冲锋，有2s的冷却，在近距离冲撞到敌人会将敌人击飞</li>
-<li>player2: ←↑↓→对应方向键，l为攻击键，使用手枪发出子弹，子弹只能在屏幕中存在3颗，手枪有一点后坐力，击中敌人会将其持续击飞</li>
-<li>w键和↑键为喷气背包跳跃（虽然没有喷气效果o(<em>￣▽￣</em>)o）持续按住可以飞高，可在空中二连跳，但是要小心上方尖刺哦</li>
-<li>死亡判定：连续超出左右屏幕2s会造成死亡（在屏幕上会有提示）碰触到上下方的尖刺也同样会造成死亡</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/08/28/Pygame小游戏——自制版混乱大枪战/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目练手</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/Pygame小游戏——自制版混乱大枪战/">展开全文 >></a>
-        </p>
-      
-
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/29/第二章——信息的表示和处理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入理解计算机系统读书心得</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -661,200 +525,15 @@ gitalk.render('gitalk-container')
 
 
 
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'e76576a3338c9cee6b71',
-  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
-  	repo: 'blog-gitment',
-  	owner: 'DAZHAdazha',
-  	admin: ['DAZHAdazha'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-</script>
   
   
-    <article id="post-Hexo-blog-的搭建-以及主题-yilia-的应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/27/Hexo-blog-的搭建-以及主题-yilia-的应用/">Hexo blog 的搭建 以及主题 yilia 的应用</a>
-    </h1>
   
 
-        
-        <a href="/2019/08/27/Hexo-blog-的搭建-以及主题-yilia-的应用/" class="archive-article-date">
-  	<time datetime="2019-08-27T03:59:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
-</a>
-        
-		
-		
-		 
-		
-		
-      </header>
-	  <div align="center" class="post-count">
-    字数：722字 | 预计阅读时长：3分钟
-</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Hexo-blog-的搭建-以及主题-yilia-的应用"><a href="#Hexo-blog-的搭建-以及主题-yilia-的应用" class="headerlink" title="Hexo blog 的搭建 以及主题 yilia 的应用"></a>Hexo blog 的搭建 以及主题 yilia 的应用</h1><h2 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h2><blockquote>
-<ul>
-<li>Hexo 是基于Node.js的个人博客框架，可以方便的部署到Github等网站上，且支持markdown格式书写，以及更换主题等功能</li>
-</ul>
-</blockquote>
-<h2 id="Hexo-搭建"><a href="#Hexo-搭建" class="headerlink" title="Hexo 搭建"></a>Hexo 搭建</h2><blockquote>
-<ol>
-<li><p>安装Node.js<br><a href="nodejs.org">下载地址</a> 选择LTS长期支持版</p>
-</li>
-<li><p>打开Git Bash（推荐）或cmd 切换至root 用户 并输入<code>npm -v</code>查看包管理器版本号</p>
-</li>
-<li><p>安装cnpm（淘宝的源，国内用npm的国外源太慢）</p>
-<p>输入<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>指令</p>
-</li>
-<li><p>安装hexo框架</p>
-<p>输入<code>cnpm install -g hexo-cli</code></p>
-</li>
-<li><p>查看hexo版本</p>
-<p>v输入<code>hexo -v</code></p>
-</li>
-<li><p>建立blog文件夹并进入目录</p>
-<p>输入<code>mkdir blog</code>+<code>cd blog</code></p>
-</li>
-<li><p>生成hexo 博客</p>
-<p>输入<code>sudo hexo init</code></p>
-</li>
-<li><p>启动hexo博客本地服务器</p>
-<p>输入<code>hexo s</code>(hexo server的简写)</p>
-<p>并用浏览器进入 localhost:4000 网页</p>
-</li>
-<li><p>新建hexo 文章</p>
-<p>输入<code>hexo n &#39;文章名字&#39;</code></p>
-</li>
-<li><p>重新部署</p>
-<p>输入<code>hexo clean</code>+<code>hexo g</code>(hexo generate)+ <code>hexo s</code></p>
-</li>
-</ol>
-</blockquote>
-<h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><blockquote>
-<ol>
-<li><p>在Github上创建仓库，命名为<code>GithubID.github.io</code>(GithubID是你账号的名称)非常重要，名称必须按照规范</p>
-</li>
-<li><p>打开Git Bash(cmd)</p>
-<p>输入<code>cnpm install  hexo-deployer-git--save</code></p>
-</li>
-<li><p>打开blog根目录，找到_config.yml文件并打开</p>
-<p>找到底端 #Deployment 行进行配置</p>
-<p>type: git</p>
-<p>repo: <a href="https://github.com/GithubID/GithubID.github.io.git" target="_blank" rel="noopener">https://github.com/GithubID/GithubID.github.io.git</a> (自己Github仓库的地址)</p>
-<p>branch: master</p>
-<p><strong>注： type repo branch 冒号后面一定要加空格！</strong></p>
-</li>
-<li><p>部署到远端服务器</p>
-<p>输入<code>hexo d</code>(hexo deploy)</p>
-</li>
-</ol>
-</blockquote>
-<h2 id="应用yilia主题"><a href="#应用yilia主题" class="headerlink" title="应用yilia主题"></a>应用yilia主题</h2><blockquote>
-<ol>
-<li><p>输入<code>git clone https://github.com/litten/hexo-themo-yilia.git themes/yilia</code>(需要进入blog 根目录)</p>
-</li>
-<li><p>找到 yilia文件夹中_config.yml文件并打开进行配置</p>
-<p>找到 #Extensions 中theme一行 并改为theme: yilia（<strong>注意空格！</strong>）</p>
-</li>
-<li><p>执行重新部署 <code>hexo clean | hexo g | hexo d</code></p>
-</li>
-</ol>
-</blockquote>
-<h2 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h2><blockquote>
-<p>1 更改默认字体 </p>
-<p>找到yilia/source文件夹中的<code>main.0c68a.css</code>文件 找到header-author 对font-family的行进行更改即可</p>
-<p>2 在左侧边栏显示总文章数</p>
-<p>找到themes\yilia\layout_partial\left-col.ejs</p>
-<p>在</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"header-menu"</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span> (<span class="attr">var</span> <span class="attr">i</span> <span class="attr">in</span> <span class="attr">theme.menu</span>)&#123; %&gt;</span></span><br><span class="line">&gt;         <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for(theme.menu[i]) %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">i</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;<span class="name">%&#125;%</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>​    后面加入    <strong>(注意编码模式要将ANSI改为utf-8，否则无法使用中文!)</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">&gt;     总文章数: <span class="tag">&lt;<span class="name">%=site.posts.length%</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>3 添加字数统计功能</p>
-<p>首先需要安装 hexo-wordcount</p>
-<p>使用命令<code>cnpm i --save hexo-wordcount</code></p>
-<p>找到themes\yilia\layout_partial\article.ejs</p>
-<p>在header下添加（<strong>同样改成utf-8编码</strong>）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">"center"</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span></span><br><span class="line">&gt;  字数：<span class="tag">&lt;<span class="name">%=</span> <span class="attr">wordcount</span>(<span class="attr">post.content</span>) %&gt;</span>字 | 预计阅读时长：<span class="tag">&lt;<span class="name">%=</span> <span class="attr">min2read</span>(<span class="attr">post.content</span>) %&gt;</span>分钟</span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>4 去除网页右下角powered by hexo等字样</p>
-<p>找到themes/next/layout/_partials/footer.swig文件，并使用&lt;–! 注释 –&gt;注释掉即可</p>
-</blockquote>
+  
 
-      
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/27/Hexo-blog-的搭建-以及主题-yilia-的应用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
+  
 
 
 
@@ -871,7 +550,7 @@ if(true){
   	repo: 'blog-gitment',
   	owner: 'DAZHAdazha',
   	admin: ['DAZHAdazha'],
-  	id: '',
+  	id: 'Sat Sep 14 2019 17:10:40 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
@@ -879,519 +558,6 @@ gitalk.render('gitalk-container')
 </script>
 </script>
   
-  
-    <article id="post-酷Q机器人插件——小渣抓取机器人" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/酷Q机器人插件——小渣抓取机器人/">酷Q机器人插件——小渣抓取机器人</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/26/酷Q机器人插件——小渣抓取机器人/" class="archive-article-date">
-  	<time datetime="2019-08-26T02:25:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
-</a>
-        
-		
-		
-		 
-		
-		
-      </header>
-	  <div align="center" class="post-count">
-    字数：972字 | 预计阅读时长：4分钟
-</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="酷Q机器人插件——小渣抓取机器人"><a href="#酷Q机器人插件——小渣抓取机器人" class="headerlink" title="酷Q机器人插件——小渣抓取机器人"></a>酷Q机器人插件——小渣抓取机器人</h1><blockquote>
-<p>难度：中等</p>
-</blockquote>
-<blockquote>
-<p>应用技术：基于酷Q机器人Air开发的聊天记录机器人，分别包括Python版本以及C++版本</p>
-</blockquote>
-<blockquote>
-<p>主要收获：</p>
-<ul>
-<li>开发了自己第一款有实际用途的应用插件</li>
-<li>尝试阅读官方文档使用了对应API开发应用</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>不足：</p>
-<ul>
-<li><p>Python版本的官方接口并不完善，无法进行打包应用，所以需要用户自行安装开发环境</p>
-</li>
-<li><p>C++由于开发难度较大，许多功能由于技术原因无法实现，只好暂时搁置</p>
-</li>
-</ul>
-</blockquote>
-<h2 id="使用方法：（Python版本）"><a href="#使用方法：（Python版本）" class="headerlink" title="使用方法：（Python版本）"></a>使用方法：（Python版本）</h2><blockquote>
-<ol>
-<li><p>安装Python环境：</p>
-<p><a href="https://gitee.com/muxiaofei/coolq_sdk_x/wikis/pages" target="_blank" rel="noopener">https://gitee.com/muxiaofei/coolq_sdk_x/wikis/pages</a></p>
-</li>
-<li><p>将 <em>酷Q Air\app\cn.muxiaofei.coolq_sdk_x</em>目录下 <em>CQPlusHandler.py</em>文件替换</p>
-</li>
-<li><p>启用酷Q中的应用<em>小渣抓取机器人</em>，并重载应用</p>
-</li>
-<li><p>向机器人发送$readme指令，并根据指令来进行操作</p>
-</li>
-</ol>
-</blockquote>
-<h2 id="具体功能："><a href="#具体功能：" class="headerlink" title="具体功能："></a>具体功能：</h2><blockquote>
-<ol>
-<li>可以将每天的聊天记录按天以text文本的格式保存</li>
-<li>可以设置关键词（如ID，时间，内容，发送人等等）来在当天消息记录中搜索相关内容</li>
-<li>通过指令查询，添加，删除关键词</li>
-</ol>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/08/26/酷Q机器人插件——小渣抓取机器人/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目练手</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/26/酷Q机器人插件——小渣抓取机器人/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'e76576a3338c9cee6b71',
-  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
-  	repo: 'blog-gitment',
-  	owner: 'DAZHAdazha',
-  	admin: ['DAZHAdazha'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-</script>
-  
-  
-    <article id="post-飞碟大战坦克小游戏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/飞碟大战坦克小游戏/">飞碟大战坦克小游戏</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/26/飞碟大战坦克小游戏/" class="archive-article-date">
-  	<time datetime="2019-08-26T02:14:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
-</a>
-        
-		
-		
-		 
-		
-		
-      </header>
-	  <div align="center" class="post-count">
-    字数：3.8k字 | 预计阅读时长：22分钟
-</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="飞碟大战坦克小游戏"><a href="#飞碟大战坦克小游戏" class="headerlink" title="飞碟大战坦克小游戏"></a>飞碟大战坦克小游戏</h1><h2 id="我做的第一个基于C语言完成的小游戏"><a href="#我做的第一个基于C语言完成的小游戏" class="headerlink" title="我做的第一个基于C语言完成的小游戏"></a>我做的第一个基于C语言完成的小游戏</h2><blockquote>
-<p>应用技术：C语言Acillib图形库</p>
-<p>收获：C语言做的第一个小项目，几乎将所有C语言的基础内容都使用了一遍，包括结构，链表的数据结构，文件的使用，以及基础的图形库运用，了解了回调函数触发事件的简单游戏机制，算得上是自己第一个处女作了吧</p>
-</blockquote>
-<h2 id="具体使用方法"><a href="#具体使用方法" class="headerlink" title="具体使用方法"></a>具体使用方法</h2><blockquote>
-<p>点击<strong>acllibl.exe</strong>文件运行即可</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/08/26/飞碟大战坦克小游戏/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目练手</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/26/飞碟大战坦克小游戏/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'e76576a3338c9cee6b71',
-  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
-  	repo: 'blog-gitment',
-  	owner: 'DAZHAdazha',
-  	admin: ['DAZHAdazha'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-</script>
-  
-  
-    <article id="post-igxe磨损比价爬虫" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/igxe磨损比价爬虫/">igxe磨损比价爬虫</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/26/igxe磨损比价爬虫/" class="archive-article-date">
-  	<time datetime="2019-08-26T01:54:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
-</a>
-        
-		
-		
-		 
-		
-		
-      </header>
-	  <div align="center" class="post-count">
-    字数：978字 | 预计阅读时长：4分钟
-</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="igxe-csgo饰品磨损比价爬虫"><a href="#igxe-csgo饰品磨损比价爬虫" class="headerlink" title="igxe-csgo饰品磨损比价爬虫"></a>igxe-csgo饰品磨损比价爬虫</h1><h2 id="自学web以及python爬虫的第一个练手项目"><a href="#自学web以及python爬虫的第一个练手项目" class="headerlink" title="自学web以及python爬虫的第一个练手项目"></a>自学web以及python爬虫的第一个练手项目</h2><blockquote>
-<p>难度：简单</p>
-</blockquote>
-<blockquote>
-<p>应用技术：request库 re库 jsonpath库 BeautifulSoup库</p>
-</blockquote>
-<blockquote>
-<p>主要收获：</p>
-<ul>
-<li>利用浏览器开发者工具中的Network 的XHR来或许网页异步发送的请求（比如翻页之后的信息）</li>
-<li>通过jsonpath库 来抓取json格式的数据文件</li>
-<li>简单的使用re库获取信息</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>不足：igxe网站反爬虫难度不大，未设有登录验证以及滑块验证码等复杂操作，因此难度过于简单</p>
-</blockquote>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><blockquote>
-<p>环境要求：request库 BeautifulSoup库 jsonpath库（使用pip install 指令安装）</p>
-<p>具体用法：</p>
-<ul>
-<li>输入关键字（建议输入完整的商品名称 e.g. <strong>AWP | 二西莫夫 (久经沙场)</strong> )</li>
-<li>输入期待的最高价格，程序会给出改价格内能买到的最低的磨损</li>
-<li>程序会在根目录生成 <strong>data.text</strong> 文件，里面包含了该商品的所有磨损及对应价格</li>
-<li>源码中的 <strong>choice</strong> 变量默认为0，但若搜索的饰品包含了StatTrack则将 <strong>choice</strong> 改成1可显示带计数器的皮肤</li>
-</ul>
-</blockquote>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><blockquote>
-<p>该项目只是第一个练手，我根据情况说不定会更新其他饰品网站的比价程序（呼声较高的是网易BUFF），但是其他网站说不定会更难爬取一些，一切看我情况再说啦(。・∀・)ノ</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/08/26/igxe磨损比价爬虫/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目练手</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/26/igxe磨损比价爬虫/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'e76576a3338c9cee6b71',
-  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
-  	repo: 'blog-gitment',
-  	owner: 'DAZHAdazha',
-  	admin: ['DAZHAdazha'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-</script>
-  
-  
-    <article id="post-深入理解计算机系统读书心得第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/25/深入理解计算机系统读书心得第一章/">深入理解计算机系统读书心得</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/25/深入理解计算机系统读书心得第一章/" class="archive-article-date">
-  	<time datetime="2019-08-25T13:11:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
-</a>
-        
-		
-		
-		 
-		
-		
-      </header>
-	  <div align="center" class="post-count">
-    字数：70字 | 预计阅读时长：1分钟
-</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章——计算机系统漫游"><a href="#第一章——计算机系统漫游" class="headerlink" title="第一章——计算机系统漫游"></a>第一章——计算机系统漫游</h2><blockquote>
-<ul>
-<li>存储器的结构分布如下：</li>
-</ul>
-<p>L0——CPU寄存器</p>
-<p>L1——高速缓存（CPU一级缓存）SRAM</p>
-<p>L2——高速缓存（CPU二级缓存）SRAM</p>
-<p>L3——高速缓存（CPU三级缓存）SRAM</p>
-<p>L4——内存 DRAM</p>
-<p>L5——硬盘</p>
-<p>L6——Web服务器</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书心得</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/25/深入理解计算机系统读书心得第一章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'e76576a3338c9cee6b71',
-  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
-  	repo: 'blog-gitment',
-  	owner: 'DAZHAdazha',
-  	admin: ['DAZHAdazha'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-</script>
-  
-  
-  
-
-
           </div>
         </div>
       </div>
@@ -1450,8 +616,8 @@ gitalk.render('gitalk-container')
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
