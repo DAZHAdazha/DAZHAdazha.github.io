@@ -1,0 +1,70 @@
+.side_bar{
+    float:letf;
+    width:20%;
+    position: fixed;
+}
+.main{
+    float:right;
+    width: 80%;
+    color:#732315;
+}
+body{
+    background: #888888;
+    color:#eee;
+    line-height: 1.7;
+}
+.header .logo{
+    line-height: 1;
+    border: 5px solid;
+    padding: 10px 20px;
+    font-size: 30px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none; /*去掉下划线等装饰*/
+}
+ .title{
+    color:rgb(6, 214, 134);
+}
+.side_bar > * {
+    padding: 10px 15px;
+}
+.side-bar .navi a{
+    font-weight: 900;
+}
+.side_bar .navi a,
+.side_bar  .tag-list a{
+    display: block;
+    padding: 15px;
+    color:rgb(255, 255, 255);
+    transition: color 200ms;
+    font-size: 25px;
+}
+.side_bar .navi a:hover,
+.side_bar  .tag-list a:hover{
+    color:rgb(212, 17, 76);
+}
+.article-list {
+    margin-right:30%;
+    background:#fff;
+    padding:20px 30px;
+    box-shadow: 0 0 3px 2px rgba(0,0,0,0.2)
+}
+.article-list .item .title{ 
+    font-size:39px;
+    font-weight: 700;
+    margin:10px 0;
+}
+.article-list .item .status{
+    font-size: 13px;
+    color:#ccc;
+    margin:10px;
+}
+.article-list .item{
+    margin-bottom: 25px;
+}
+.intro{
+    padding: 10px;
+}
