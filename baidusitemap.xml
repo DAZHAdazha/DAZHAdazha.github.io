@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://dazhadazha.github.io/2019/09/18/LaTeX%20Markdown%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-09-18</lastmod>
+  </url>  <url>
+    <loc>http://dazhadazha.github.io/2019/08/27/Hexo-blog-%E7%9A%84%E6%90%AD%E5%BB%BA-%E4%BB%A5%E5%8F%8A%E4%B8%BB%E9%A2%98-yilia-%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://dazhadazha.github.io/2019/09/14/%E7%AC%AC%E5%85%AD%E7%AB%A0%E2%80%94%E2%80%94%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2019-09-14</lastmod>
   </url>  <url>
@@ -20,9 +26,6 @@
     <lastmod>2019-09-01</lastmod>
   </url>  <url>
     <loc>http://dazhadazha.github.io/2019/08/26/%E9%85%B7Q%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8F%92%E4%BB%B6%E2%80%94%E2%80%94%E5%B0%8F%E6%B8%A3%E6%8A%93%E5%8F%96%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
-    <lastmod>2019-09-01</lastmod>
-  </url>  <url>
-    <loc>http://dazhadazha.github.io/2019/08/27/Hexo-blog-%E7%9A%84%E6%90%AD%E5%BB%BA-%E4%BB%A5%E5%8F%8A%E4%B8%BB%E9%A2%98-yilia-%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
     <lastmod>2019-09-01</lastmod>
   </url>
 </urlset>

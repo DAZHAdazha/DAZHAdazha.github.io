@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="DAZHA大渣的博客">
 <meta property="og:description" content="Hexo blog 的搭建 以及主题 yilia 的应用Hexo 简介  Hexo 是基于Node.js的个人博客框架，可以方便的部署到Github等网站上，且支持markdown格式书写，以及更换主题等功能   Hexo 搭建  安装Node.js下载地址 选择LTS长期支持版  打开Git Bash（推荐）或cmd 切换至root 用户 并输入npm -v查看包管理器版本号  安装cnpm（淘">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-01T04:25:04.398Z">
+<meta property="og:updated_time" content="2019-09-16T14:23:48.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo blog 的搭建 以及主题 yilia 的应用">
 <meta name="twitter:description" content="Hexo blog 的搭建 以及主题 yilia 的应用Hexo 简介  Hexo 是基于Node.js的个人博客框架，可以方便的部署到Github等网站上，且支持markdown格式书写，以及更换主题等功能   Hexo 搭建  安装Node.js下载地址 选择LTS长期支持版  打开Git Bash（推荐）或cmd 切换至root 用户 并输入npm -v查看包管理器版本号  安装cnpm（淘">
@@ -89,7 +89,7 @@ var _hmt = _hmt || [];
 			</ul>
 		</nav>
 		<nav>
-				总文章数： 8
+				总文章数： 9
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -292,7 +292,7 @@ var _hmt = _hmt || [];
 		
       </header>
 	  <div align="center" class="post-count">
-    字数：722字 | 预计阅读时长：3分钟
+    字数：784字 | 预计阅读时长：3分钟
 </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -371,11 +371,11 @@ var _hmt = _hmt || [];
 <p>2 在左侧边栏显示总文章数</p>
 <p>找到themes\yilia\layout_partial\left-col.ejs</p>
 <p>在</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"header-menu"</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span> (<span class="attr">var</span> <span class="attr">i</span> <span class="attr">in</span> <span class="attr">theme.menu</span>)&#123; %&gt;</span></span><br><span class="line">&gt;         <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for(theme.menu[i]) %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">i</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;<span class="name">%&#125;%</span>&gt;</span></span><br><span class="line">&gt;     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"header-menu"</span>&gt;</span></span><br><span class="line">&gt;  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">&gt;  <span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span> (<span class="attr">var</span> <span class="attr">i</span> <span class="attr">in</span> <span class="attr">theme.menu</span>)&#123; %&gt;</span></span><br><span class="line">&gt;      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for(theme.menu[i]) %&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">i</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">&gt;  <span class="tag">&lt;<span class="name">%&#125;%</span>&gt;</span></span><br><span class="line">&gt;  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
 <p>​    后面加入    <strong>(注意编码模式要将ANSI改为utf-8，否则无法使用中文!)</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">&gt;     总文章数: <span class="tag">&lt;<span class="name">%=site.posts.length%</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">&gt;  总文章数: <span class="tag">&lt;<span class="name">%=site.posts.length%</span>&gt;</span></span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
 <p>3 添加字数统计功能</p>
@@ -383,11 +383,12 @@ var _hmt = _hmt || [];
 <p>使用命令<code>cnpm i --save hexo-wordcount</code></p>
 <p>找到themes\yilia\layout_partial\article.ejs</p>
 <p>在header下添加（<strong>同样改成utf-8编码</strong>）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">"center"</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span></span><br><span class="line">&gt;  字数：<span class="tag">&lt;<span class="name">%=</span> <span class="attr">wordcount</span>(<span class="attr">post.content</span>) %&gt;</span>字 | 预计阅读时长：<span class="tag">&lt;<span class="name">%=</span> <span class="attr">min2read</span>(<span class="attr">post.content</span>) %&gt;</span>分钟</span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">"center"</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span></span><br><span class="line">&gt; 字数：<span class="tag">&lt;<span class="name">%=</span> <span class="attr">wordcount</span>(<span class="attr">post.content</span>) %&gt;</span>字 | 预计阅读时长：<span class="tag">&lt;<span class="name">%=</span> <span class="attr">min2read</span>(<span class="attr">post.content</span>) %&gt;</span>分钟</span><br><span class="line">&gt; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
 <p>4 去除网页右下角powered by hexo等字样</p>
 <p>找到themes/next/layout/_partials/footer.swig文件，并使用&lt;–! 注释 –&gt;注释掉即可</p>
+<p>5 若想在博客中添加图片则可以通过markdown添加，并将图片放到source文件夹下的img文件夹，再设置路径<strong>./img/photo.jpg</strong>来显示，不过需要注意的是图片名字必须是<strong>英文！</strong>  </p>
 </blockquote>
 
       
@@ -701,7 +702,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境搭建</a>
+                <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,7 +710,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
+                <a href="javascript:void(0)" class="js-tag color5">环境搭建</a>
               </li>
             
             <div class="clearfix"></div>
