@@ -84,7 +84,7 @@ var _hmt = _hmt || [];
 			</ul>
 		</nav>
 		<nav>
-				总文章数： 9
+				总文章数： 10
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -261,6 +261,161 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-第三章 Java的基本程序设计结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/27/第三章 Java的基本程序设计结构/">Java核心技术 卷I 读书心得</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/27/第三章 Java的基本程序设计结构/" class="archive-article-date">
+  	<time datetime="2019-09-27T07:17:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-27</time>
+</a>
+        
+		
+		
+		 
+		
+		
+      </header>
+	  <div align="center" class="post-count">
+    字数：696字 | 预计阅读时长：2分钟
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java核心技术-卷I-读书心得"><a href="#Java核心技术-卷I-读书心得" class="headerlink" title="Java核心技术 卷I 读书心得"></a>Java核心技术 卷I 读书心得</h1><h2 id="第三章-Java的基本程序设计结构"><a href="#第三章-Java的基本程序设计结构" class="headerlink" title="第三章 Java的基本程序设计结构"></a>第三章 Java的基本程序设计结构</h2><blockquote>
+<ul>
+<li><p>源代码的文件名必须与公共类的名字相同，并用.java作为扩展名</p>
+</li>
+<li><p>与Python不同的是，Java与C/C++一样，都需要用双引号分割字符串</p>
+</li>
+<li><p>注释与C相同“<strong>//</strong>” 表示单行注释，”<strong>/* */</strong> “表示的多行注释</p>
+</li>
+<li><p>常量Double.POSITIVE_INFINITY，Double.NEGATIVE_INFINITY和Double.NaN分别表示正无穷大，负无穷大以及NaN(not a number)</p>
+</li>
+</ul>
+<p>然而，不能使用 <code>if (x == Double.NaN)</code>来判断一个特定的值等于Double.NaN，因为所有的NaN的值都被认为是不相同的。因此，需要使用Double.isNaN方法：<code>if(Double.isNan(x))</code></p>
+<ul>
+<li><p>Java中，char类型描述了UTF-16编码中的一个代码单元，因此强烈建议不在程序中使用char类型，除非确实需要除了UTF-16代码单元，最好将字符串作为抽象数据类型处理。</p>
+</li>
+<li><p>在Java中，使用关键字<strong>final</strong>指示常量，例如<code>final double PI = 3.14</code>关键字final表示这个变量<strong>只能</strong>赋值一次，习惯上常量名使用全大写</p>
+</li>
+<li><p>若希望某个常量在一个类中的多个方法中使用，则称这个常量为<strong>类常量</strong>，使用关键字<strong>static final</strong>设置类常量：</p>
+</li>
+</ul>
+<p><code>public static final double PI = 3.14</code></p>
+<p>注意类常量是定义与main方法的外部</p>
+<ul>
+<li><strong>切记不能使用 == 来比较两个字符串是否相等！！！</strong></li>
+</ul>
+<p>”==“ 只能确定两个字符串是否存放于同一存储位置，而应当是用<code>a.equals(b)</code>来判断两个字符串是否相等</p>
+<ul>
+<li><img src="./img/printf.jpg" alt></li>
+</ul>
+<p>字符串的printf方法格式，参数索引值从1开始，而不是从0开始，如%1$…是对第一个参数进行格式化</p>
+<ul>
+<li>类似于C中goto的<strong>带标签的break语句</strong>，用于跳出多重循环</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; read_data:</span><br><span class="line">&gt; <span class="keyword">while</span>(...)&#123;</span><br><span class="line">&gt;     ...    </span><br><span class="line">&gt;     <span class="keyword">for</span>(...)&#123;</span><br><span class="line">&gt;         ...        </span><br><span class="line">&gt;             <span class="keyword">if</span>(...)&#123;</span><br><span class="line">&gt;                 <span class="keyword">break</span> read_data;</span><br><span class="line">&gt;             		&#125;    </span><br><span class="line">&gt;     		&#125;</span><br><span class="line">&gt; &#125;System.out.println(<span class="string">"here!"</span>);<span class="comment">//break后会跳到这里</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>标签必须放在希望跳出的最外层循环之前，并且必须紧跟一个冒号，如果if条件成立，执行break语句后会跳转到带标签的 <strong>语句块末尾！</strong></p>
+<ul>
+<li><p>创建一个数字数组时，所有元素都初始化为0，boolean数组都会初始化为false，对象数组则会初始化为一个特殊值null</p>
+</li>
+<li><p>for each 循环</p>
+</li>
+</ul>
+<p>格式为：</p>
+<p><code>for(variable : collection) statement</code></p>
+<p>e.g.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span>(<span class="keyword">int</span> element : a) <span class="comment">//类似于python的 for element in a:    System.out.println(element)</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>注，for each 循环不能自动处理二维数组的每一个元素，若要访问二维数组的所有元素需要两个循环嵌套，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span>(<span class="keyword">double</span>[] row : a)<span class="comment">//注意row 为double[] 类型</span></span><br><span class="line">&gt;     <span class="keyword">for</span>(<span class="keyword">double</span> value : row)&#123;</span><br><span class="line">&gt; 	...</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书心得</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/27/第三章 Java的基本程序设计结构/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'e76576a3338c9cee6b71',
+  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
+  	repo: 'blog-gitment',
+  	owner: 'DAZHAdazha',
+  	admin: ['DAZHAdazha'],
+  	id: '',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+</script>
+  
   
     <article id="post-LaTeX Markdown的安装以及使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1677,11 +1832,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
+                <a href="javascript:void(0)" class="js-tag color5">项目练手</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目练手</a>
+                <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
               </li>
             
             <div class="clearfix"></div>
