@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dazhadazha.github.io/"/>
-  <updated>2019-09-27T08:17:07.452Z</updated>
+  <updated>2019-09-30T14:24:48.612Z</updated>
   <id>http://dazhadazha.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java核心技术 卷I 读书心得</title>
+    <link href="http://dazhadazha.github.io/2019/09/30/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%B1%BB/"/>
+    <id>http://dazhadazha.github.io/2019/09/30/第四章——对象与类/</id>
+    <published>2019-09-30T14:24:31.000Z</published>
+    <updated>2019-09-30T14:24:48.612Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="第四章——对象与类"><a href="#第四章——对象与类" class="headerlink" title="第四章——对象与类"></a>第四章——对象与类</h1><blockquote><ul><li><p>Java中的 <strong>this</strong> 关键字与python中的 <strong>self</strong> 同理</p></li><li><p>如果要返回一个可变对象的引用，则先需要将该对象克隆，否则会破坏了封装性！</p></li><li><p>可以将实例域定义为 <strong>final</strong>，则在构建对象时必须初始化这样的域，而且在后面的操作中，不能够再对它进行修改</p></li><li><p>如果将域定义为 <strong>static</strong>, 则每个<strong>类</strong>中只有一个这样的域（不是只定义一个，而是指该类所有对象共同拥有该域），此外，静态域还可以使用“类名.静态域”的方式来使用</p></li><li><p>静态方法是一种不能向对象实施操作的方法，可以理解为函数，但是静态方法是可以访问自身类的静态域的</p></li><li><p>静态工厂方法是指不通过new，而使用一个静态方法来对外提供自身实例的方法</p></li><li><p>每一个类都可以有一个main方法，这是一个常用于对类进行单元测试的技巧</p></li><li><p>在构造器中第一个语句使用<code>this(...);</code>的形式可以调用同一个类的另一个构造器，该技巧通常用于从小到大构造多个不同个数参数的构造器</p></li><li><p>在类中，域首先在对象赋值中初始化，再运行代码块，最后调用构造器，因此后面的值覆盖前面的，值显示的顺序为<strong>构造器&gt;初始化块&gt;赋值</strong></p></li><li><p>若类的静态域初始化较为复杂，可以使用静态的初始化块：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="keyword">static</span>&#123;    ...<span class="comment">//初始化静态域&#125;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;第四章——对象与类&quot;&gt;&lt;a href=&quot;#第四章——对象与类&quot; class=&quot;headerlink&quot; title=&quot;第四章——对象与类&quot;&gt;&lt;/a&gt;第四章——对象与类&lt;/h1&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Java中的 &lt;strong&gt;this&lt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="读书心得" scheme="http://dazhadazha.github.io/tags/%E8%AF%BB%E4%B9%A6%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
   
   <entry>
     <title>Java核心技术 卷I 读书心得</title>

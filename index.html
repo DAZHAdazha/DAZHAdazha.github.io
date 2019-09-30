@@ -84,7 +84,7 @@ var _hmt = _hmt || [];
 			</ul>
 		</nav>
 		<nav>
-				总文章数： 10
+				总文章数： 11
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -261,6 +261,134 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-第四章——对象与类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/30/第四章——对象与类/">Java核心技术 卷I 读书心得</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/30/第四章——对象与类/" class="archive-article-date">
+  	<time datetime="2019-09-30T14:24:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-30</time>
+</a>
+        
+		
+		
+		 
+		
+		
+      </header>
+	  <div align="center" class="post-count">
+    字数：421字 | 预计阅读时长：1分钟
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第四章——对象与类"><a href="#第四章——对象与类" class="headerlink" title="第四章——对象与类"></a>第四章——对象与类</h1><blockquote>
+<ul>
+<li><p>Java中的 <strong>this</strong> 关键字与python中的 <strong>self</strong> 同理</p>
+</li>
+<li><p>如果要返回一个可变对象的引用，则先需要将该对象克隆，否则会破坏了封装性！</p>
+</li>
+<li><p>可以将实例域定义为 <strong>final</strong>，则在构建对象时必须初始化这样的域，而且在后面的操作中，不能够再对它进行修改</p>
+</li>
+<li><p>如果将域定义为 <strong>static</strong>, 则每个<strong>类</strong>中只有一个这样的域（不是只定义一个，而是指该类所有对象共同拥有该域），此外，静态域还可以使用“类名.静态域”的方式来使用</p>
+</li>
+<li><p>静态方法是一种不能向对象实施操作的方法，可以理解为函数，但是静态方法是可以访问自身类的静态域的</p>
+</li>
+<li><p>静态工厂方法是指不通过new，而使用一个静态方法来对外提供自身实例的方法</p>
+</li>
+<li><p>每一个类都可以有一个main方法，这是一个常用于对类进行单元测试的技巧</p>
+</li>
+<li><p>在构造器中第一个语句使用<code>this(...);</code>的形式可以调用同一个类的另一个构造器，该技巧通常用于从小到大构造多个不同个数参数的构造器</p>
+</li>
+<li><p>在类中，域首先在对象赋值中初始化，再运行代码块，最后调用构造器，因此后面的值覆盖前面的，值显示的顺序为<strong>构造器&gt;初始化块&gt;赋值</strong></p>
+</li>
+<li><p>若类的静态域初始化较为复杂，可以使用静态的初始化块：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="keyword">static</span>&#123;    ...<span class="comment">//初始化静态域&#125;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书心得</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/30/第四章——对象与类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'e76576a3338c9cee6b71',
+  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
+  	repo: 'blog-gitment',
+  	owner: 'DAZHAdazha',
+  	admin: ['DAZHAdazha'],
+  	id: '',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+</script>
+  
   
     <article id="post-第三章 Java的基本程序设计结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1581,121 +1709,10 @@ gitalk.render('gitalk-container')
 </script>
   
   
-    <article id="post-深入理解计算机系统读书心得第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/25/深入理解计算机系统读书心得第一章/">深入理解计算机系统读书心得</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/25/深入理解计算机系统读书心得第一章/" class="archive-article-date">
-  	<time datetime="2019-08-25T13:11:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
-</a>
-        
-		
-		
-		 
-		
-		
-      </header>
-	  <div align="center" class="post-count">
-    字数：70字 | 预计阅读时长：1分钟
-</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章——计算机系统漫游"><a href="#第一章——计算机系统漫游" class="headerlink" title="第一章——计算机系统漫游"></a>第一章——计算机系统漫游</h2><blockquote>
-<ul>
-<li>存储器的结构分布如下：</li>
-</ul>
-<p>L0——CPU寄存器</p>
-<p>L1——高速缓存（CPU一级缓存）SRAM</p>
-<p>L2——高速缓存（CPU二级缓存）SRAM</p>
-<p>L3——高速缓存（CPU三级缓存）SRAM</p>
-<p>L4——内存 DRAM</p>
-<p>L5——硬盘</p>
-<p>L6——Web服务器</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书心得</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/25/深入理解计算机系统读书心得第一章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'e76576a3338c9cee6b71',
-  	clientSecret: 'ad6ce17f0c8e726d43684959ff6a8bc693e2685c',
-  	repo: 'blog-gitment',
-  	owner: 'DAZHAdazha',
-  	admin: ['DAZHAdazha'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-</script>
-  
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1832,11 +1849,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目练手</a>
+                <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书心得</a>
+                <a href="javascript:void(0)" class="js-tag color5">项目练手</a>
               </li>
             
             <div class="clearfix"></div>
